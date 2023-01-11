@@ -30,8 +30,6 @@ jobs:
          AWS_DEFAULT_REGION: us-east-2
     steps:
       - uses: actions/checkout@v2
-      - name: Copy files to the test website with the AWS CLI
-        run: echo Hello, world!
       - name: Run only if push to main branch
         if: github.ref == 'refs/heads/main'
         id: apply
