@@ -1,1 +1,23 @@
 
+name: Simple Manual Workflow -Three Env
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+  workflow_dispatch:
+
+jobs:
+  Prod:
+    runs-on: ubuntu-latest
+    environment: Prod
+    
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run a script ${{secrets.MY_SECRET}}
+        run: |
+          echo "running job in Dev env"
+      
+      
