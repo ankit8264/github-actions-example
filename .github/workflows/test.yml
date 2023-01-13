@@ -1,0 +1,19 @@
+on:
+  push:
+    branches: [Test]
+  pull_request:
+    branches: [Test]
+
+  workflow_dispatch:
+
+jobs:
+  Prod:
+    runs-on: ubuntu-latest
+    environment: Test
+    
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run a script ${{secrets.MY_SECRET}}
+        run: |
+          echo "running job in Dev env"
+      
