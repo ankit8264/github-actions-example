@@ -1,13 +1,13 @@
 on:
   push:
-    branches: [Test]
+    branches: [test]
   pull_request:
-    branches: [Test]
+    branches: [test]
 
   workflow_dispatch:
 
 jobs:
-  Prod:
+  Test:
     runs-on: ubuntu-latest
     environment: Test
     
